@@ -9,10 +9,11 @@ dist/
 build/
 *.egg-info/
 .env
-.env.*
 *.sqlite3
 .vscode/
 .idea/
 *.iml
 .DS_Store
 Thumbs.db
+firebase_credentials.json
+secret* 
