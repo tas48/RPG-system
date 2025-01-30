@@ -35,8 +35,8 @@
 
 2. **Instale as dependências:**
    ```bash
-   cd rpg-manager-online
-   composer update
+   cd rpg-manager-online/server
+   composer start
    ```x 
 
 3. **Configure o ambiente:**
