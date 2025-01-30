@@ -22,36 +22,52 @@
 ## Tecnologias utilizadas
 
 - 💻 **Frontend:** React.TS + Chakra UI
-- ⚙️ **Backend:** Slim Framework PHP.
-- 🗄️ **Banco de dados:** SQLite.
-
+- ⚙️ **Backend:** FastAPI (Python)
+- 🗄️ **Banco de dados:** Firebase.
 
 ## Como usar
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/rpg-manager-online.git
+   git clone https://github.com/tas48/rpg-manager-online.git
+   ```  
+
+2. **Instale as dependências do projeto (Backend e Frontend):**
+   ```bash
+   cd /server
+   pip install -r requirements.txt
+   ```
+   ```bash
+   cd /client
+   npm install
    ```
 
-2. **Instale as dependências:**
-   ```bash
-   cd rpg-manager-online/server
-   composer start
-   ```x 
+3. **Configure o Firebase:**
 
-3. **Configure o ambiente:**
-   Crie um arquivo `.env` com as configurações necessárias, como a URL do banco de dados e a chave da API.
+   - Crie um projeto no [Firebase Console](https://console.firebase.google.com/).
+   - Acesse a seção **Firestore Database** e crie o banco de dados.
+   - Vá até **Configurações do Projeto** > **Contas de Serviço** e gere uma chave privada para autenticação com o Firebase.
+   - baixe a chave a inclua no projeto.
 
-4. **Execute o projeto:**
-   ```bash
-   npm run dev
+4. **Configure o ambiente:**
+
+   - Crie um arquivo `.env` na raiz do projeto com as configurações necessárias.
+   - Use o arquivo `.env.example` como modelo.
+   
+   Exemplo de configuração do arquivo `.env`:
+
+   ```env
+   GOOGLE_APPLICATION_CREDENTIALS=/caminho/para/seu/firebase_credentials.json
    ```
-   *(ou o comando específico para o seu framework/backend)*
 
-5. **Acesse no navegador:**
-   Abra `http://localhost:3000` para usar a aplicação.
+5. **Execute o servidor FastAPI:**
+   ```bash
+   uvicorn main:app --reload
+   ```
+   *(ou o comando específico para rodar o seu backend)*
 
----
+6. **Acesse no navegador:**
+   Abra `http://localhost:8000` para usar a aplicação.
 
 ## Contribuição
 
@@ -69,14 +85,7 @@ Para começar, basta:
 4. Enviar as mudanças: `git push origin minha-feature`.
 5. Abrir um pull request.
 
----
 
 ## Licença
 
 Este projeto é licenciado sob a [MIT License](LICENSE). 📜
-
----
-
-## Contato
-
-Caso tenha dúvidas ou sugestões, entre em contato pelo e-mail: [seu-email@dominio.com](mailto:seu-email@dominio.com). ✉️
